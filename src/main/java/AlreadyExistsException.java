@@ -1,5 +1,5 @@
-//public class AlreadyExistsException extends RuntimeException{
-//    public AlreadyExistsException(String s) {
-//        super(s);
-//    }
-//}
+public class AlreadyExistsException extends RuntimeException{
+    public AlreadyExistsException(String msg) {
+        super(msg);
+    }
+}

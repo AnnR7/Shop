@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class ShopRepositoryTest {
 
     @Test
-    void removeWhenProductExist() {
+    void testRemoveWhenProductExist() {
 
         ShopRepository repo = new ShopRepository();
 
@@ -61,45 +61,45 @@ class ShopRepositoryTest {
             repo.remove(4444)
         );
     }
-//    @Test
-//    void addWhenProductNotExist() {
-//
-//        ShopRepository repo = new ShopRepository();
-//
-//        Product product1 = new Product(1, "книга", 2_000);
-//        Product product2 = new Product(22, "футболка", 3_000);
-//        Product product3 = new Product(333, "кружка", 1_000);
-//        Product product4 = new Product(4444,"машинка",10_000);
-//
-//        repo.add(product1);
-//        repo.add(product2);
-//        repo.add(product3);
-//        repo.add(product4);
-//
-//        Product[] actual = repo.findAll();
-//        Product[] expected = {product1, product2, product3, product4};
-//
-//        Assertions.assertArrayEquals(expected, actual);
-//
-//    }
-//    @Test
-//    void addWhenProductExist() {
-//
-//        ShopRepository repo = new ShopRepository();
-//
-//        Product product1 = new Product(1, "книга", 2_000);
-//        Product product2 = new Product(22, "футболка", 3_000);
-//        Product product3 = new Product(333, "кружка", 1_000);
-//        Product product4 = new Product(1,"книга",2_000);
-//
-//        repo.add(product1);
-//        repo.add(product2);
-//        repo.add(product3);
-//        repo.add(product4);
-//
-//        Assertions.assertThrows(AlreadyExistsException.class, () ->
-//                repo.add(product4)
-//        );
-//
-//    }
+    @Test
+    void addWhenProductNotExist() {
+
+        ShopRepository repo = new ShopRepository();
+
+        Product product1 = new Product(1, "книга", 2_000);
+        Product product2 = new Product(22, "футболка", 3_000);
+        Product product3 = new Product(333, "кружка", 1_000);
+        Product product4 = new Product(4444,"машинка",10_000);
+
+        repo.add(product1);
+        repo.add(product2);
+        repo.add(product3);
+        repo.add(product4);
+
+        Product[] actual = repo.findAll();
+        Product[] expected = {product1, product2, product3, product4};
+
+        Assertions.assertArrayEquals(expected, actual);
+
+    }
+    @Test
+    void addWhenProductExist() {
+
+        ShopRepository repo = new ShopRepository();
+
+        Product product1 = new Product(1, "книга", 2_000);
+        Product product2 = new Product(22, "футболка", 3_000);
+        Product product3 = new Product(333, "кружка", 1_000);
+        Product product4 = new Product(4444,"машинка",10_000);
+
+        repo.add(product1);
+        repo.add(product2);
+        repo.add(product3);
+        repo.add(product4);
+
+        Assertions.assertThrows(AlreadyExistsException.class, () ->
+                repo.add(new Product(333, "тапки", 200))
+        );
+
+    }
 }

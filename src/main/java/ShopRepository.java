@@ -9,17 +9,17 @@ public class ShopRepository {
     public void add(Product product) {
         products = addToArray(products, product);
 
-//        Product addingProduct = findByExistsId(product.getId());
-//         if (addingProduct != null) {
+//        Product addingProducts = findById(product.getId());
+//        if (addingProducts != null) {
 //            throw new AlreadyExistsException(
-//                    "Товар с id: "+ product.getId() +" уже существует"
+//                    "Товар с id: " + product.getId() + " уже существует"
 //            );
 //        }
     }
 
     /**
      * Вспомогательный метод для имитации добавления элемента в массив
-     * @param current — массив, в который мы хотим добавить элемент
+     * @param current — массив, в который мы хотим добавить элемент``
      * @param product — элемент, который мы хотим добавить
      * @return — возвращает новый массив, который выглядит, как тот, что мы передали,
      * но с добавлением нового элемента в конец
@@ -31,18 +31,10 @@ public class ShopRepository {
         }
         tmp[tmp.length - 1] = product;
         return tmp;
-    }
-//    private Product findByExistsId(int id) {
-//        for (Product product : products) {
-//            if (product.getId() == id) {
-//                return product;
-//            }
-//        }
-//        return null;
-//    }
-//    public Product[] getProducts() {
-//        return products;
-//    }
+
+       }
+
+
     public Product[] findAll() {
         return products;
     }
