@@ -7,14 +7,16 @@ public class ShopRepository {
      * @param product — добавляемый товар
      */
     public void add(Product product) {
-        products = addToArray(products, product);
 
-//        Product addingProducts = findById(product.getId());
-//        if (addingProducts != null) {
-//            throw new AlreadyExistsException(
-//                    "Товар с id: " + product.getId() + " уже существует"
-//            );
-//        }
+
+        Product addingProducts = findById(product.getId());
+        if (addingProducts != null) {
+            throw new AlreadyExistsException(
+                    "Товар с id: " + product.getId() + " уже существует"
+            );
+        }
+
+        products = addToArray(products, product);
     }
 
     /**
